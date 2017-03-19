@@ -1,7 +1,7 @@
 {
   "name": "ptz-maproutes-domain",
   "version": "1.0.2",
-  "description": "Polutz MapRoutes Domain.",
+  "description": "Este é um dominio para salvar, calcular e comparar rotas/caminhos de um ponto a outro no planeta.",
   "main": "dist/index.js",
   "scripts": {
     "mocha": "mocha ./dist/**/*.js --compilers js:babel-core/register --require babel-polyfill",
