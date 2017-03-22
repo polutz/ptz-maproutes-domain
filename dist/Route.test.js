@@ -8,10 +8,6 @@ var _errors = require('./errors');
 
 var _errors2 = _interopRequireDefault(_errors);
 
-var _Position = require('./Position');
-
-var _Position2 = _interopRequireDefault(_Position);
-
 var _ptzAssert = require('ptz-assert');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -24,7 +20,6 @@ describe('Route', function () {
                 starTime: new Date(),
                 endTime: new Date()
             });
-            console.log('--------->', route);
             (0, _ptzAssert.contains)(route.errors, _errors2.default.ERROR_ROUTE_POSITIONS_EMPTY);
         });
         it('Should set positions', function () {
@@ -84,21 +79,21 @@ describe('Route', function () {
         });
     });
     describe('Compare', function () {
-        var position = new _Position2.default({
+        var position = {
             latitude: -23.520120000000002,
             longitude: -46.84301000000001,
             time: new Date()
-        });
-        var position2 = new _Position2.default({
+        };
+        var position2 = {
             latitude: -23.51882,
             longitude: -46.859100000000005,
             time: new Date()
-        });
-        var position3 = new _Position2.default({
+        };
+        var position3 = {
             latitude: -23.518860000000004,
             longitude: -46.85873,
             time: new Date()
-        });
+        };
         it('No positions match', function () {
             var route = new _Route2.default({
                 positions: [position, position2],

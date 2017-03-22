@@ -36,6 +36,17 @@ export default class Route extends EntityBase implements IRoute {
     }
 
     compareRoute(otherRoute: IRoute): IPosition[] {
-        return null;
+        var matchPositions = [];
+        otherRoute.positions.map((pos) => {
+            this.positions.map((thisPos)=>{
+                console.log("***>pos", pos.latitude);
+                console.log("***>pos", pos.longitude);
+                console.log("***>thisPos", thisPos.latitude);
+                console.log("***>thisPos", thisPos.longitude);
+                if(pos.latitude === thisPos.latitude && pos.longitude===thisPos.longitude)
+                matchPositions.push(pos);
+            })
+        })
+        return matchPositions;
     }
 };

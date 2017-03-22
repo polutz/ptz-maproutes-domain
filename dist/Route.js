@@ -56,7 +56,19 @@ var Route = function (_EntityBase) {
     }, {
         key: 'compareRoute',
         value: function compareRoute(otherRoute) {
-            return null;
+            var _this2 = this;
+
+            var matchPositions = [];
+            otherRoute.positions.map(function (pos) {
+                _this2.positions.map(function (thisPos) {
+                    console.log("***>pos", pos.latitude);
+                    console.log("***>pos", pos.longitude);
+                    console.log("***>thisPos", thisPos.latitude);
+                    console.log("***>thisPos", thisPos.longitude);
+                    if (pos.latitude === thisPos.latitude && pos.longitude === thisPos.longitude) matchPositions.push(pos);
+                });
+            });
+            return matchPositions;
         }
     }]);
 

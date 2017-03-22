@@ -7,7 +7,7 @@ interface IRoute extends IEntityBase {
 }
 
 interface IRouteArgs extends IEntityBaseArgs {
-    positions: IPosition[];
+    positions: IPositionArgs[];
     starTime: Date;
     endTime: Date;
 }
