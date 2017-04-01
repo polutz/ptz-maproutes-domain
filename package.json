@@ -3,9 +3,13 @@
   "version": "1.0.2",
   "description": "Este é um dominio para salvar, calcular e comparar rotas/caminhos de um ponto a outro no planeta.",
   "main": "dist/index.js",
+  "typings": "src/index.ts",
   "scripts": {
-    "mocha": "mocha ./dist/**/*.js --compilers js:babel-core/register --require babel-polyfill",
+    "postinstall": "typings install",
+    "lint": "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
+    "js": "gulp js",
     "pretest": "gulp js",
+    "mocha": "mocha ./dist/**/*.js --compilers js:babel-core/register --require babel-polyfill",
     "test": "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=a503a187-ee4d-4f43-916e-c7077fc7b9c0"
   },
   "repository": {
@@ -18,30 +22,33 @@
     "url": "https://github.com/polutz/ptz-maproutes-domain/issues"
   },
   "homepage": "https://github.com/polutz/ptz-maproutes-domain#readme",
-  "dependencies": {
-    "babel-loader": "^6.2.10",
-    "ptz-assert": "^1.2.0",
-    "ptz-core-domain": "^1.0.2"
-  },
-  "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-polyfill": "^6.22.0",
-    "babel-preset-es2015": "^6.18.0",
-    "codecov": "^1.0.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-typescript": "^3.1.4",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
-    "mocha-lcov-reporter": "^1.2.0",
-    "nyc": "^10.1.2",
-    "sinon": "^1.17.7",
-    "typescript": "^2.1.6",
-    "typings": "^2.1.0"
-  },
   "babel": {
     "presets": [
       "es2015"
     ]
+  },
+  "dependencies": {
+    "babel-loader": "^6.2.10",
+    "ptz-assert": "^1.2.0",
+    "ptz-core-domain": "^1.1.9"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "codecov": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-typescript": "^3.1.6",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^10.2.0",
+    "ptz-assert": "^1.6.3",
+    "sinon": "^1.17.7",
+    "tslint": "^5.0.0",
+    "typescript": "^2.2.2",
+    "typings": "^2.1.0"
   }
 }

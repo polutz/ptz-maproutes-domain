@@ -1,11 +1,13 @@
-interface IPosition {
+import { IEntityBase, IEntityBaseArgs } from 'ptz-core-domain';
+
+export interface IPosition extends IEntityBase{
     latitude: number;
     longitude: number;
     time: Date;
-    isValid():boolean;
+    isValid(): boolean;
 }
 
-interface IPositionArgs {
+export interface IPositionArgs extends IEntityBaseArgs{
     latitude: number;
     longitude: number;
     time: Date;

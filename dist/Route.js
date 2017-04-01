@@ -8,11 +8,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _ptzCoreDomain = require('ptz-core-domain');
 
-var _errors = require('./errors');
-
-var _errors2 = _interopRequireDefault(_errors);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _index = require('./index');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -44,14 +40,14 @@ var Route = function (_EntityBase) {
     }, {
         key: 'validatePositions',
         value: function validatePositions() {
-            if (!this.positions || this.positions.length == 0) this.addError(_errors2.default.ERROR_ROUTE_POSITIONS_EMPTY);
+            if (!this.positions || this.positions.length == 0) this.addError(_index.errors.ERROR_ROUTE_POSITIONS_EMPTY);
         }
     }, {
         key: 'validateTime',
         value: function validateTime() {
-            if (!this.starTime) this.addError(_errors2.default.ERROR_ROUTE_STARTTIME_REQUIRED);
-            if (!this.endTime) this.addError(_errors2.default.ERROR_ROUTE_ENDTIME_REQUIRED);
-            if (this.endTime <= this.starTime) this.addError(_errors2.default.ERROR_ROUTE_ENDTIME_BEFORE_STARTTIME);
+            if (!this.starTime) this.addError(_index.errors.ERROR_ROUTE_STARTTIME_REQUIRED);
+            if (!this.endTime) this.addError(_index.errors.ERROR_ROUTE_ENDTIME_REQUIRED);
+            if (this.endTime <= this.starTime) this.addError(_index.errors.ERROR_ROUTE_ENDTIME_BEFORE_STARTTIME);
         }
     }, {
         key: 'compareRoute',
@@ -61,10 +57,6 @@ var Route = function (_EntityBase) {
             var matchPositions = [];
             otherRoute.positions.map(function (pos) {
                 _this2.positions.map(function (thisPos) {
-                    console.log("***>pos", pos.latitude);
-                    console.log("***>pos", pos.longitude);
-                    console.log("***>thisPos", thisPos.latitude);
-                    console.log("***>thisPos", thisPos.longitude);
                     if (pos.latitude === thisPos.latitude && pos.longitude === thisPos.longitude) matchPositions.push(pos);
                 });
             });

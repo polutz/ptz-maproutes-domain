@@ -1,0 +1,9 @@
+{
+  "generator-ptz-domain": {
+    "promptValues": {
+      "appname": "ptz-maproutes-domain",
+      "githubAuthor": "polutz",
+      "runNpmInstall": true
+    }
+  }
+}

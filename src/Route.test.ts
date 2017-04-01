@@ -82,23 +82,24 @@ describe('Route', () => {
     });
 
     describe('Compare', () => {
-        var position = {
+        var position = new Position({
             latitude: -23.520120000000002,
             longitude: -46.84301000000001,
             time: new Date()
-        };
-        var position2 = {
+        });
+        var position2 = new Position({
             latitude: -23.51882,
             longitude: -46.859100000000005,
             time: new Date()
-        };
-        var position3 = {
+        });
+        var position3 = new Position({
             latitude: -23.518860000000004,
             longitude: -46.85873,
             time: new Date()
-        };
+        });
 
         it('No positions match', () => {
+
             var route = new Route({
                 positions: [position, position2],
                 starTime: new Date(),

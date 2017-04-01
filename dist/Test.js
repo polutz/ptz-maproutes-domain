@@ -14,28 +14,26 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Position = function (_EntityBase) {
-    _inherits(Position, _EntityBase);
+var Test = function (_EntityBase) {
+    _inherits(Test, _EntityBase);
 
-    function Position(args) {
-        _classCallCheck(this, Position);
+    function Test(args) {
+        _classCallCheck(this, Test);
 
-        var _this = _possibleConstructorReturn(this, (Position.__proto__ || Object.getPrototypeOf(Position)).call(this, args));
+        var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, args));
 
-        _this.latitude = args.latitude;
-        _this.longitude = args.longitude;
-        _this.time = args.time;
+        _this.newPropTest = args.newPropTest;
         return _this;
     }
 
-    _createClass(Position, [{
-        key: 'isValid',
-        value: function isValid() {
-            return null;
+    _createClass(Test, [{
+        key: 'funcTest',
+        value: function funcTest() {
+            return true;
         }
     }]);
 
-    return Position;
+    return Test;
 }(_ptzCoreDomain.EntityBase);
 
-exports.default = Position;
+exports.default = Test;
